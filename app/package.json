@@ -1,0 +1,13 @@
+{
+  "name": "MuseWidgetBuilder",
+  "version": "0.0.1",
+  "main": "main.js",
+  "author": "Kevin van Oosterhout",
+  "description": "A tool for building Adobe Muse Widgets",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}

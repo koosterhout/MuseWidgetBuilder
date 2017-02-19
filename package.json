@@ -1,0 +1,27 @@
+{
+  "name": "MuseWidgetBuilder",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Kevin van Oosterhout",
+  "description": "A tool for building Adobe Muse Widgets",
+  "scripts": {
+    "start": "electron ./app",
+    "dist": "build --mac",
+	"packager":"electron-packager MuseWidgetBuilder --platform=darwin --out ./dist --overwrite"
+  },
+  "devDependencies": {
+    "electron-builder": "^12.3.1"
+  },
+  "build": {
+    "appId": "eastwood.nl.musewidget",
+    "category": "Eastwood",
+    "win": {
+      "target":"nsis",
+      "icon":"build/icon.ico"
+    },
+	"mac": {
+	  "target":"pkg",
+      "icon":"build/icon.ico"
+	}
+  }
+}

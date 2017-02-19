@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muse Widget Builder</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<div class="MuseWidgetBuilder">
+<div>
+<label for="inlineHTML">
+	Code met shortcode
+</label>
+<textarea name="inlineHTML" id="inlineHTML"></textarea>
+</div>
+
+<div>
+<label for="beforeBODY">
+	Code voor de &lt;/body&gt;
+</label>
+<textarea name="beforeBODY" id="beforeBODY"></textarea>
+</div>
+
+<div class="buttondiv">
+<input type="button" name="Verzenden" id="opslaan" value="Opslaan"/>
+</div>
+
+</div>	
+<script>window.$ = window.jQuery = require('./js/jquery.min.js');</script>
+<script src="./js/script.js"></script>
+</body>
+</html>
