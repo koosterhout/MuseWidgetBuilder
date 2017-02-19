@@ -1,6 +1,6 @@
 {
   "name": "MuseWidgetBuilder",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "main.js",
   "author": "Kevin van Oosterhout",
   "description": "A tool for building Adobe Muse Widgets",
