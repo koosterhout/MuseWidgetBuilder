@@ -2,3 +2,4 @@ release-builds/
 node_modules/
 dist/
 *.log*
+*.pem
