@@ -21,22 +21,21 @@ $(function(){
 				</HTMLWidget>`;
 	}
 
-
-	filters = [
-		{name: '.mucow', extensions: ['mucow']}
-	];
-	const electron = require('electron');
-	const path = require('path');
-	const fs = require('fs');
-	const {dialog} = require('electron').remote;
-	
 	$("input[type=button]").click(function(event) {
-		mucowScript = script($("#inlineHTML").val(),$("#beforeBODY").val())
-		
-		dialog.showSaveDialog({title:"Save Widget...", filters: filters, properties: ['openFile']},function(file){
-			if (file) {
-				fs.writeFileSync(file, mucowScript);
+		mucowScript = script($("#inlineHTML").val(),$("#beforeBODY").val());
+
+		chrome.fileSystem.chooseEntry({type: 'saveFile', accepts:[{ extensions:['mucow'] }]}, 
+		function(writableFileEntry) {
+			errorHandler = function(e) {
+				console.log(e);
 			}
+			writableFileEntry.createWriter(function(writer) {
+				writer.onerror = errorHandler;
+				writer.onwriteend = function(e) {
+					console.log('write complete');
+				};
+				writer.write(new Blob([mucowScript]));
+			}, errorHandler );
 		});
 	});
 });
